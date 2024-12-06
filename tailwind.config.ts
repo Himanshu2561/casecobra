@@ -1,6 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  safelist: [
+    { pattern: /^bg-(zinc-900|blue-950|rose-950)$/ },
+    { pattern: /^border-(zinc-900|blue-950|rose-950)$/ },
+  ],
   darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -64,10 +68,15 @@ const config: Config = {
         marquee: {
           "100%": { transform: "translateY(-50%)" },
         },
+        flashing: {
+          "0%, 100%": { opacity: "0.2" },
+          "20%": { opacity: "1" },
+        },
       },
       animation: {
         marquee: "marquee var(--marquee-duration) linear infinite",
         "fade-in": "fade-in 0.5s linear forwards",
+        flashing: "flashing 1.4s infinite linear",
       },
     },
   },
