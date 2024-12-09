@@ -21,12 +21,16 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const { id } = configuration;
   const { user } = useKindeBrowserClient();
   console.log("user1", user);
-  
+
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
 
   useEffect(() => setShowConfetti(true), []);
+
+  useEffect(() => {
+    console.log("In useffect user: ", user);
+  }, [user]);
 
   const { color, model, finish, material } = configuration;
 
