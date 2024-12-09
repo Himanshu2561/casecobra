@@ -1,9 +1,9 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+import { useInView } from "framer-motion";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { useInView } from "framer-motion";
-import { cn } from "@/lib/utils";
 import Phone from "./Phone";
 
 const PHONES = [
@@ -109,8 +109,11 @@ function Review({ imgSrc, className, ...props }: ReviewProps) {
 }
 
 function ReviewGrid() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.4 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef as React.RefObject<Element>, {
+    once: true,
+    amount: 0.4,
+  });
   const columns = splitArray(PHONES, 3);
   const column1 = columns[0];
   const column2 = columns[1];

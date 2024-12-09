@@ -1,5 +1,5 @@
-import React from "react";
 import { cn } from "@/lib/utils";
+import React from "react";
 
 interface PhoneProps extends React.HTMLAttributes<HTMLDivElement> {
   imgSrc: string;

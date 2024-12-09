@@ -43,11 +43,11 @@ export const createCheckoutSession = async ({
     },
   });
 
-  const userfromdb = await db.user.findUnique({
-    where: {
-      id: user.id,
-    },
-  });
+  // const userfromdb = await db.user.findUnique({
+  //   where: {
+  //     id: user.id,
+  //   },
+  // });
 
   // console.log(
   //   "LOG: \n",

@@ -3,8 +3,6 @@
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
-type Props = {};
-
 const STEPS = [
   {
     name: "Step 1: Add image",
@@ -23,7 +21,7 @@ const STEPS = [
   },
 ];
 
-const Steps = (props: Props) => {
+const Steps = () => {
   const pathname = usePathname();
 
   return (

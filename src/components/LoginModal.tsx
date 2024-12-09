@@ -1,10 +1,9 @@
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle
 } from "@/components/ui/dialog";
 import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 import Image from "next/image";

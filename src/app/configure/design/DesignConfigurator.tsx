@@ -30,10 +30,10 @@ import {
 import { useMutation } from "@tanstack/react-query";
 import { ArrowRight, Check, ChevronsUpDown } from "lucide-react";
 import NextImage from "next/image";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Rnd } from "react-rnd";
 import { SaveConfigArgs, saveConfig as _saveConfig } from "./actions";
-import { useRouter } from "next/navigation";
 
 interface DesignConfiguratorProps {
   configId: string;
@@ -138,6 +138,8 @@ const DesignConfigurator = ({
 
       await startUpload([file], { configId });
     } catch (error) {
+      console.error("Error saving configuration:", error);
+
       toast({
         title: "Something went wrong!",
         description:

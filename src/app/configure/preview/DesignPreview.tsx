@@ -1,4 +1,5 @@
 "use client";
+import LoginModal from "@/components/LoginModal";
 import Phone from "@/components/Phone";
 import { Button } from "@/components/ui/button";
 import { BASE_PRICE, PRODUCT_PRICES } from "@/config/products";
@@ -13,7 +14,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Confetti from "react-dom-confetti";
 import { createCheckoutSession } from "./actions";
-import LoginModal from "@/components/LoginModal";
 
 const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const router = useRouter();
@@ -24,7 +24,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
 
-  useEffect(() => setShowConfetti(true));
+  useEffect(() => setShowConfetti(true), []);
 
   const { color, model, finish, material } = configuration;
 
