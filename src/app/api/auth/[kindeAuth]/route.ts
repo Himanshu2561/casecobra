@@ -26,6 +26,7 @@ export const GET = handleAuth({
 });
 
 // Add a preflight handler for OPTIONS requests
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const OPTIONS = (request: NextRequest) => {
   const response = new NextResponse(null, {
     status: 200,
